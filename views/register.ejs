@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body class="signUp">
+    <% include partials/menu %>
+
+    <% include partials/messages %>
+
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br>
+
+  <div class="container-11">
+    <h1 style="font-size: 40px; margin-left: 46%;">Sign Up</h1>
+    <form action="/authentification/register" method='POST' style="border-style: none;">
+	    <label for="name"><b>Name</b></label>
+	    <input type="text" placeholder="Enter name" name="name" 
+       value="<%= typeof name != 'undefined' ? name : '' %>" required/>
+	
+  	  <label for="surname"><b>Surname</b></label>
+  	  <input type="text" placeholder="Enter surname" name="surname" 
+      value="<%= typeof surname != 'undefined' ? surname : '' %>" required/>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" 
+      value="<%= typeof email != 'undefined' ? email : '' %>" required/>
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" 
+      value="<%= typeof password != 'undefined' ? password : '' %>" required/>
+
+      <label for="passwordRepeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="password2" 
+      value="<%= typeof password2 != 'undefined' ? password2 : '' %>" required/>
+
+      <label for="company"><b>Company</b></label>
+  	  <input type="text" placeholder="Enter company" name="company"/>
+	
+	    <label for="professions">Choose a profession:</label>
+      <select name="professions" id="professions" required>
+        <option value="farmer">Farmer</option>
+        <option value="agriHub">Agri-Hub</option>
+        <option value="foodMarket">Food Market</option>
+        <option value="restaurant">Restaurant</option>
+        <option value="retailer">Retailer</option>
+      </select>
+      <br><br>
+    
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+    
+      <p>By creating an account you agree to our <a id="Terms&Privacy" href="/terms&privacy/terms&privacy" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <button type="submit" class="button-4">Sign Up</button>
+
+    </form>
+  </div>
+
+
+<!--<script>
+  const form = document.getElementById('reg-form')
+  form.addEventListener('submit', registerUser)
+
+  function registerUser(event){
+    event.preventDefault()
+    const name = document.getElementById('name').value
+    const surname = document.getElementById('surname').value
+    const email = document.getElementById('email').value
+    const password = document.getElementById('password').value
+    const passwordRepeat = document.getElementById('passwordRepeat').value
+    const role = document.getSelection
+
+    const result = await fetch('/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name,
+        surname,
+        email,
+        password,
+        passwordRepeat,
+        role
+
+      })
+    }).then((res) => res.json())
+
+    console.log(result)
+  }
+</script>-->
+
+<div class="footer">
+  <h2 style="color: black">&#169 2020 - 2021 <a id="Home" href="/" class="footerlink" style="color: black">TrFood. Tracking the food.</a></h2>
+</div>
+<% include partials/footer %>
+</body>
+<% include partials/script %>
+</html>

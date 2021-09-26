@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body class="page7">
+    <% include partials/menu %>
+
+    <% include partials/messages %>
+
+<div class="row7">
+  <div class="side7">
+	<p style="text-align:center">Search product</p>
+	<div class="aboutText7">
+        <form action="/products/registerProduct" method='POST'>
+            <label for="bornLocation"><b>Where it comes from?</b></label>
+            <input type="text" placeholder="Enter address of birth" name="bornLocation" required/>
+
+            <label for="currentLocation"><b>Current location</b></label>
+            <input type="text" placeholder="Enter current location" name="currentLocation" required/>
+    
+            <label for="composition"><b>Composition</b></label>
+            <input type="text" placeholder="Enter composition" name="composition" required/>
+    
+            <label for="expiryDate"><b>Expiry date</b></label>
+            <input type="date" placeholder="Enter expiry date" name="expiryDate" required/>
+    
+            <br><br>
+            <label for="nutritionalInformation"><b>Nutritional information</b></label>
+            <input type="text" placeholder="Enter the nutritional information" name="nutritionalInformation" required/>
+            <br>
+            <label for="status">Choose the current status:</label>
+            <select name="status" id="status" required>
+               <option value="Harvest">Harvest</option>
+               <option value="Processing">Processing</option>
+               <option value="Transportation">Transportation</option>
+               <option value="Distribution">Distribution</option>
+            </select>
+            <br><br>
+            <label for="pollutionGenerated"><b>Please enter the pollution generated in this state</b></label>
+            <input type="number" placeholder="Enter the pollution generated" name="pollutionGenerated" required/>
+            <br><br>
+            <p>In case this product makes use of other ingredients from this same page.</p>
+
+            <label for="usePageProduct"><b>Do you use products already registered?</b></label>
+                <input type="checkbox" name="usePageProduct" value="true" checked>
+              <br> 
+    
+            <div class="clearfix6">
+              <button type="submit" class="signupbtn6">Add</button>
+            </div>
+        </form>
+    </div>
+	<p> </p>
+	<p> </p>
+  </div>
+</div>
+
+<div class="footer">
+  <h2 style="color: white">&#169 2020 - 2021 <a id="Home" href="/" class="footerlink">TrFood. Tracking the food.</a></h2>
+</div>
+<% include partials/footer %>
+</body>
+<% include partials/script %>
+</html>

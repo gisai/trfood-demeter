@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrFood</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin=""></script>
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+<style>
+ #map { height: 700px; }
+</style>
+</head>
+<body class="showPage">
+<% include partials/menu %>
+
+<br><br><br><br><br><br><br><br><br>
+<div style="text-align: center; ">
+<h1 class="title-2">Product</h1>
+</div>
+<br><br><br><br><br><br><br><br><br>
+
+<div class="container-12">
+	<h1 style="font-weight: bold; text-align: center; margin-bottom: 20px;">Product</h1>
+	<div class="box-10"></div>
+	<br>
+	<p style="margin-left: 5%; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;"><b>Product ID</b> - <%= product.ID %></p>
+	<p style="margin-left: 5%; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;"><b>Product Name</b> - <%= product2.name %></p>
+	<p style="margin-left: 5%; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;"><b>Product availability</b> - <%= product2.availability %></p>
+	<p style="margin-left: 5%; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;"><b>Expiry date</b> - <%= product.expiryDate %></p>
+	<p style="margin-left: 5%; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;"><b>Nutricitional information</b> - <%= product2.nutritionalInformation %></p>
+	<p style="margin-left: 5%; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;"><b>Company</b> - <%= product2.company %></p>
+	<p style="margin-left: 5%; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;"><b>Status</b> - <%= product.status[length].status %></p>
+	<p style="margin-left: 5%; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;"><b>Carbon footprint</b> - <%= product.pollutionGenerated %>  <b><i>CO2Equiv/Kg</i></b></p>
+	<p style="margin-left: 5%; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;"><b>Carbon footprint transport</b> - <%= product.pollutionGeneratedTransport %>  <b><i>CO2Equiv/Km</i></b></p>
+	<p style="margin-left: 5%; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;"><b>distance travelled</b>  - <%= product.distance %> m</p>
+	<p style="margin-left: 5%; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;"><b>Date add</b> - <%= product.createdAt %></p>
+	<div class="box-10"></div>
+	<div id="map"></div>	
+
+</div>
+
+<script type="text/javascript">
+	const latlngmi = JSON.parse('<%= latlngi %>');
+	const latlngmf = JSON.parse('<%= latlngf %>');
+</script>
+<script src="/js/show-map.js"></script>
+<div class="footer">
+  <h2 style="color: white">&#169 2020 - 2021 <a id="Home" href="/" style="color: white;" class="footerlink">TrFood. Tracking the food.</a></h2>
+</div>
+<% include partials/footer %>
+</body>
+<% include partials/script %>
+</html>

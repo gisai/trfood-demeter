@@ -1,0 +1,1034 @@
+* {
+  box-sizing: border-box;
+}
+
+/* INDEX */
+
+/*Background images*/
+.index {
+  position: relative;
+  background-image: url("../images/index2.jpg"), url("../images/index1.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment:local, fixed;
+  background-position: 0px 39.77%, 0px;
+  background-size: 3355px 67%, cover;
+}
+/*Position Images*/
+.img-container-1 {
+  text-align: left;
+  margin-left: 20%;
+}
+.img-container-2 {
+  text-align: right;
+  margin-right: 20%;
+}
+/* Top buttons*/
+.topb-1 {
+  font-size: 50px;
+  margin-left: 25%;
+  width: 30%;
+  background-color: rgb(127, 213, 224);
+  border-radius: 6px;
+}
+
+.topb-2 {
+  font-size: 50px;
+  margin-right: 30%;
+  width: 30%;
+  background-color: rgb(127, 213, 224);
+  border-radius: 6px;
+}
+
+.box-2 {
+  position: relative;
+  overflow: hidden;
+  background-color:white;
+}
+/* Top Index */
+.top {
+  background-image: url("../images/Index1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.topimg {
+  display: flex;
+  flex-direction: row;
+}
+
+.topimg:before,
+.topimg:after {
+            content: "";
+            flex: 1 1;
+            border-bottom: 10px solid rgb(255, 255, 255);
+            margin: auto;
+}
+.imgt{ 
+            height: 400px;
+            width: 400px;
+            border-radius: 50%;
+}
+
+/* Farm Page */
+
+.farmpage {
+  height: 100%;
+  position: relative;
+  background-image: url("../images/white.jpg"), url("../images/farmp.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment:local, local;
+  background-position: 0px 100%, 0px 0px;
+  background-size: 100% 68%, 100% 760px;
+}
+
+.box-4 {
+  position: relative;
+  overflow: hidden;
+  background-color:rgb(68, 68, 68);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.top-2 {
+  flex: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.left-1 {
+  flex: 50%;
+  border-radius: 30px;
+  padding: 20px;
+  border-color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+.right-1 {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.top-3 {
+  flex: 60%;
+  border-radius: 30px;
+  padding: 20px;
+  border-color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+.foot-3 {
+  flex: 40%;
+  border-radius: 30px;
+  padding: 20px;
+  border-color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+.foot-2 {
+  flex: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+.left-2 {
+  flex: 60%;
+}
+
+.right-2 {
+  flex: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-4 {
+  flex: 50%;
+}
+
+.foot-4 {
+  flex: 50%;
+}
+
+
+/* FarmPage end */
+
+/* Processing Page */
+
+.processingpage {
+  height: 100%;
+  position: relative;
+  background-image: url("../images/white.jpg"), url("../images/processing.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment:local, local;
+  background-position: 0px 100%, 0px 0px;
+  background-size: 100% 68%, 100% 760px;
+}
+
+/* Markets Page */
+
+.marketspage {
+  height: 100%;
+  position: relative;
+  background-image: url("../images/white.jpg"), url("../images/market.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment:local, local;
+  background-position: 0px 100%, 0px 0px;
+  background-size: 100% 68%, 100% 760px;
+}
+
+/* Foodprint Page */
+
+.foodprintpage {
+  height: 100%;
+  position: relative;
+  background-image: url("../images/white.jpg"), url("../images/pollution.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment:local, local;
+  background-position: 0px 100%, 0px 0px;
+  background-size: 100% 68%, 100% 24%;
+}
+
+/* Farm to Fork Page */
+
+.farmtoforkpage {
+  height: 100%;
+  position: relative;
+  background-image: url("../images/white.jpg"), url("../images/farmtofork4.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment:local, local;
+  background-position: 0px 100%, 0px 0px;
+  background-size: 100% 68%, 100% 760px;
+}
+
+/* Food Groups Page */
+
+.foodGroupspage {
+  height: 100%;
+  position: relative;
+  background-image: url("../images/white.jpg"), url("../images/imagen-Grande.jpeg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment:local, local;
+  background-position: 0px 100%, 0px 0px;
+  background-size: 100% 68%, 100% 760px;
+}
+
+/* Profile Page */
+
+.profilePage {
+  position: relative;
+  background-image: url(""), url("../images/profiletop.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment:local, fixed;
+  background-position: 0px 39.77%, 0px 0px;
+  background-size: 3355px 67%, cover;
+}
+
+.container-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.profile-image {
+  flex: 50%;
+}
+
+.profile-data {
+  flex: 50%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  margin-left: 7%;
+  color: black;
+}
+
+.editacc {
+  background-color: rgb(214, 214, 214);
+  border-style: solid;
+  border-radius: 6px;
+  border-color: black;
+  margin-right: 50%;
+  text-align: center;
+}
+
+.editacc:hover {
+  background-color: rgb(190, 190, 190);
+}
+
+.box-5 {
+  position: relative;
+  overflow: hidden;
+  background-color:rgb(68, 68, 68);
+}
+
+.container-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: rgb(214, 214, 214);
+  margin-left: 15%;
+  margin-right: 15%;
+  border-style: solid;
+  border-color: black;
+  border-radius: 6px;
+}
+
+.edits-data {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  background-color: rgb(214, 214, 214);
+  color: black;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.edits-data:hover {
+  background-color: rgb(190, 190, 190);
+}
+
+.title-1 {
+  border-style: solid; 
+  border-color: black; 
+  margin-right: 10%; 
+  margin-left: 10%; 
+  border-radius: 2px; 
+  background-color: rgb(214, 214, 214); 
+  font-family: serif; 
+  font-size: 50px; 
+  text-align: center; 
+  color: black;
+}
+
+.container-3 {
+  display: flex;
+  border-color: black;
+  border-style: solid;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.top-5 {
+  flex: 33%;
+  background-color: rgb(214, 214, 214);
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+.a-1 {
+  color: black;
+}
+
+.a-1:hover {
+  color: rgb(105, 105, 105);
+  text-decoration: none;
+}
+
+.middle-1 {
+  flex: 33%;
+  background-color: rgb(214, 214, 214);
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+
+.foot-5 {
+  flex: 33%;
+  background-color: rgb(214, 214, 214);
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+
+.button-3 {
+  background-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-color: rgb(148, 50, 50);
+  color: rgb(148, 50, 50);
+}
+
+.button-3:hover {
+  background-color: #a94442;
+  color: black;
+}
+
+.button-5 {
+  background-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-color: rgb(148, 50, 50);
+  color: rgb(148, 50, 50);
+  margin-left: 20%;
+  width: 60%;
+}
+
+.button-5:hover {
+  background-color: #a94442;
+  color: black;
+}
+
+/* End Profile Page */
+
+/* Select Product to create Page */
+
+.typeProductPage {
+  position: relative;
+  background-image: url("../images/chooseGroup.png"), url("../images/typeproductback.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: local, fixed;
+  background-position: 0px 50px, 0px 0px;
+  background-size: 100% 390px, cover;
+}
+
+.box-6 {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(199, 194, 119);
+}
+
+.container-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../images/typeproductback-2.jpg");
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-position: 0px 0px;
+  background-size: cover;
+}
+
+.center-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.top-6 {
+  flex: 50%;
+  background-color: white;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-style: solid;
+  border-color: rgba(158, 154, 97, 0.829);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.foot-6 {
+  flex: 50%;
+  background-color: white;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-style: solid;
+  border-color: rgba(158, 154, 97, 0.829);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.text-1 {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.a-2 {
+  color: rgba(158, 154, 97, 0.829);
+  font-family: serif; 
+  font-size: 20px;
+  border-style: solid;
+}
+
+.a-2:hover{
+  color: rgba(119, 116, 74, 0.829);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* End Select Product to create Page */
+
+
+/* Footer Pages */
+.footer {
+  padding: 80px;
+  text-align: center;
+  color: white;
+  margin-bottom: 150px;
+}
+
+.footerlink {
+  display: block;
+  color: rgb(92, 92, 92);
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.footerlink:hover{
+  color: #CEF393;
+	text-decoration: none;
+}
+
+/* End Footer Pages */
+
+
+/* Register Products */
+
+.registerProduct-1 {
+  position: relative;
+  background-image: url("../images/registerProduct.png"), url("../images/index1.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: local, fixed;
+  background-position: 0px 70px, 0px 0px;
+  background-size: 100% 370px, cover;
+}
+
+.container-5 {
+  border-radius: 15px;
+  background-color: rgba(150, 146, 95, 0.829);
+}
+
+.container-6 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.top-7 {
+  flex: 12%;
+  justify-content: center;
+}
+
+.middle-2 {
+  flex: 80%;
+  justify-content: center;
+  text-align: center;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 1%;
+}
+
+.foot-7 {
+  flex: 8%
+}
+
+.shape-1 {
+  height: 30px;
+  width: 30px;
+  background-color: rgb(85, 85, 85);
+  border-radius: 50%;
+  margin-left: 7%;
+  margin-top: 5%;
+}
+
+.shape-2 {
+  height: 30px;
+  width: 30px;
+  background-color: rgb(85, 85, 85);
+  border-radius: 50%;
+  margin-left: 65%;
+  margin-top: 5%;
+}
+
+.form-1 {
+  border-style: none;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.form-2 {
+  border-style: none;
+  margin-right: 15%;
+  margin-left: 15%;
+}
+
+.text-2 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px; 
+  color: rgb(0, 0, 0);
+}
+
+.submit-1 {
+  align-items: center;
+  text-align: center;
+}
+
+.button-1 {
+  background-color: white;
+  border-style: solid;
+  border-color: rgb(163, 145, 62);
+  color: rgb(163, 145, 62);
+}
+
+.button-1:hover{
+  background-color: rgb(199, 178, 57);
+  color: rgb(131, 117, 37);
+}
+
+/* End Register Products*/
+
+/* identifier Page */
+
+.identifierPage {
+  position: relative;
+  background-image: url("../images/search.jpg"), url("../images/index1.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: local, fixed;
+  background-position: 0px 70px, 0px 0px;
+  background-size: 100% 550px, cover;
+}
+
+.box-7 {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(189, 189, 189);
+}
+
+.container-7 {
+  border-style: none;
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+.button-2 {
+  border-radius: 7px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.button-2:hover {
+  background-color: rgb(189, 189, 189);
+}
+
+.text-3 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px; 
+  color: rgb(0, 0, 0);
+  margin-left: 5%;
+}
+
+/* End identifier Page */
+
+/* Product show page */
+
+.container-8 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 40px;
+}
+
+.container-8:hover {
+  background-color: #a1b14b;
+}
+
+/* End Product show */
+
+/* About Us Page */
+
+.aboutUsPage {
+  position: relative;
+  background-image: url(""), url("../images/about_us.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment:local, local;
+  background-position: 0px 39.77%, 0px 0px;
+  background-size: 3355px 67%, 100% 25%;
+}
+
+.box-8 {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+
+/* End About Us Page */
+
+/* Terms Page */
+
+.termsPage {
+  position: relative;
+  background-image: url(""), url("../images/termsprivacy.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment:local, local;
+  background-position: 0px 39.77%, 0px 0px;
+  background-size: 3355px 67%, 100% 24%;
+}
+
+.container-9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.top-8 {
+  flex: 50%;
+  font-family: serif;
+  font-size: 20px;
+}
+
+.foot-8 {
+  flex: 50%;
+  
+  font-family: serif;
+  font-size: 20px;
+}
+
+/* End Terms Page */
+
+/* Contact Page */
+
+.contactPage {
+  position: relative;
+  background-image: url(""), url("../images/contact.png");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment:local, local;
+  background-position: 0px 39.77%, 0px 10%;
+  background-size: 3355px 67%, 100% 27%;  
+}
+
+.box-9 {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+.container-10 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 8px;
+}
+
+.left-3 {
+  flex: 50%;
+  
+}
+
+.right-3 {
+  flex: 50%;
+}
+
+/* End Contact Page */
+
+/* Sign Up Page */
+
+.signUp {
+  position: relative;
+  background-image: url(""), url("../images/signup.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment:local, local;
+  background-position: 0px 39.77%, 0px 0px;
+  background-size: 3355px 67%, 100% 25%;  
+}
+
+.container-11 {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.button-4 {
+  border-color: grey;
+  border-style: solid;
+  color: grey;
+  align-items: center;
+  background-color: white;
+}
+
+.button-4:hover{
+  background-color: grey;
+  color: white;
+}
+
+/* End Sign Up Page */
+
+/* Show Page */
+
+.showPage {
+  position: relative;
+  background-image: url(""), url("../images/Vegetablep.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment:local, fixed;
+  background-position: 0px 39.77%, 0px 0px;
+  background-size: 3355px 67%, cover;  
+}
+
+.container-12 {
+  border-style: solid;
+  border-radius: 7px;
+  background-color: #ffffffcb;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.title-2 {
+  color: white; 
+  font-size: 72px; 
+  background-color: rgba(161, 161, 161, 0.712);
+  margin-left: 36%;
+  margin-right: 36%;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #555555;
+  font-weight: bold;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.box-10 {
+  border-style: solid;
+  border-color: rgb(65, 65, 65);
+}
+
+/* End show page */
+
+/* Global Product Edit */
+
+.globalProductEdit {
+  position: relative;
+  background-image: url("../images/globalProducttitle.png"), url("../images/index1.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: local, fixed;
+  background-position: 0px 70px, 0px 0px;
+  background-size: 100% 370px, cover;
+}
+
+.box-11 {
+  background-color: #a1b14b;
+}
+
+/* End Global Product */
+@media screen and (max-width: 700px) {
+  .row1 {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .column1 {
+    flex-direction: column;
+  }
+}
+
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.button4 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button4:hover {
+  opacity: 0.8;
+  background-color: #CEF393;
+}
+
+.cancelbtn4 {
+  width: auto;
+  padding: 10px 18px;
+  background-color: green;
+}
+
+.imgcontainer4 {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar4 {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container4 {
+  padding: 16px;
+}
+
+span.psw4 {
+  float: right;
+  padding-top: 16px;
+}
+
+@media screen and (max-width: 300px) {
+  span.psw4 {
+     display: block;
+     float: none;
+  }
+  .a.button4 {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: green;
+  }
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  background-color: #CEF393;
+  opacity:1;
+}
+
+@media screen and (max-width: 300px) {
+  .cancelbtn6, .signupbtn6 {
+     width: 100%;
+  }
+}
+
+form {border: 3px solid #f1f1f1;}
+
+.imgcontainer8 {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar8 {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.bg-3 { 
+  background-color: #ffffff;
+  color: #555555;
+}
+.container-fluid {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+  color: #71ac5a !important;
+}
+.active>a {
+color: #71ac5a !important;;
+}
+
+footer.nb-footer{
+  border-top: 4px solid #979797; 
+  background-color: rgb(240, 240, 240);
+}
+
+  
+footer.nb-footer .about .social-media {
+  margin-top: 15px; 
+}
+  
+footer.nb-footer .about .social-media ul li a {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #979797;
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+}
+  
+footer.nb-footer .about .social-media ul li a:hover {
+  background: #979797;
+  color: #fff;
+  border-color: #979797; 
+}
+  
+footer.nb-footer .footer-info-single {
+  margin-top: 30px; 
+}
+  
+footer.nb-footer .footer-info-single .title {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  font-size: 16px;
+  border-left: 4px solid #979797;
+  padding-left: 5px; 
+}
+  
+footer.nb-footer .footer-info-single ul li a {
+  display: block;
+  color: rgb(0, 0, 0);
+  padding: 2px 0; 
+}
+  
+footer.nb-footer .footer-info-single ul li a:hover {
+  color: #979797; 
+}
+  
+footer.nb-footer .footer-info-single p {
+  font-size: 13px;
+  line-height: 20px;
+  color: rgb(0, 0, 0); 
+}
+
+#map-template {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 100%;
+}
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/head %> 
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body class="identifierPage">
+    <% include partials/menu %>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="box-7"><br></div>
+    <br><br>
+
+    <p style="text-align: center; background-color: white; margin-left: 7%; margin-right: 7%; border-radius: 7px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 16px;">You can use the product identifier to search for the product here, and get all the data we have about it.
+      In case you have permission to edit the data, you will probably have obtained the corporate QR, and when you use that identifier, you will have the possibility to edit the product.</p>
+
+    <form class="container-7" action="/identifier/identifier" method='POST' style="border:1px solid #ccc">
+    <label for="ID" style="font-size: 25px;"><b>Identifier</b></label>
+    <input type="text" placeholder="Enter Identifier" name="ID" required>
+
+    <button class="button-2" type="submit">Search</button>
+  </form>
+
+<div class="footer">
+  <h2 style="color: black">&#169 2020 - 2021 <a id="Home" href="/" class="footerlink" style="color: black">TrFood. Tracking the food.</a></h2>
+</div>
+<% include partials/footer %>
+</body>
+<% include partials/script %>
+</html>

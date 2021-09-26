@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body class="page4">
+<% include partials/menu %>
+
+<%- include partials/messages %>
+
+<div class="side4">
+  <div class="imgcontainer4">
+    <img style="width: 400px; height: 400px;" src="../images/avatar.jpg" alt="Avatar" class="avatar4">
+  </div>
+  <div class="container4">
+    <form action="/authentification/login" method="POST" style="border-style: none;">
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required/>
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required/>
+        
+      <button type="submit" class="button-4">Login</button>
+      <label>
+       <input type="checkbox" checked="checked" name="remember"> Remember me
+     </label>
+    </form>
+  </div>
+
+    <a id="Register" href="/authentification/register" style="float: left;">
+      <button class="button-4">Sign Up</button>
+    </a>
+    <span class="psw4">Forgot <a id="ForgotPass" href="/forgotPass" style="color: black;">password?</a></span>
+
+</div>
+
+<div class="footer">
+  <h2 style="color: black">&#169 2020 - 2021 <a id="Home" href="/" class="footerlink" style="color: black">TrFood. Tracking the food.</a></h2>
+</div>
+<% include partials/footer %>
+</body>
+<% include partials/script %>
+</html>

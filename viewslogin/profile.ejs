@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <% include partials/head %> 
+
+ 
+ <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+<body class="profilePage" id="index">
+<% include partials/menu %>
+<br>
+<div class="container-1">
+	<div class="profile-image">
+
+		<img src="/images/avatar.jpg" width="200px" height="200px" style="border-radius: 300px; margin-left: 75%;">
+	</div>
+	<div class="profile-data">
+		<br><br>
+		<ul>
+			<li>Name: <%= user.name %></li>
+			<li>Surname: <%= user.surname %></li>
+			<li>Email: <%= user.email %></li>
+			<li>Company: <%= user.company %></li>
+			<li>Profession: <%= user.professions %></li>
+		</ul>
+		<div class="editacc">
+		<a class="a-1" href="/users/myaccount">Edit profile data</a>
+	    </div>
+		<br>
+	</div>
+</div>
+<br>	
+<div class="box-5"><br></div>
+<h1 class="title-1"> Your Products</h1>
+<br>
+<div class="container-2"> 
+    <% for ( var i = 0; i < edits2.length; i++) { %>
+		<br>
+		<div class="edits-data">
+			<br>
+			<img style="height: 300px; width: 400px; border-radius: 10px;" src="data:image/png;base64, <%= edits2[i].img %>" />
+			<br><br>
+			<p style="text-align: center; margin-right: 5%; margin-left: 5%;">  ID <%= edits[i].ID %>  </p>
+			<p style="text-align: center; margin-right: 5%; margin-left: 5%;">  Name: <%= edits2[i].name %>  </p>
+			<p style="text-align: center; margin-right: 5%; margin-left: 5%;">  Company: <%= edits2[i].company %>  </p>
+			<p style="text-align: center; margin-right: 5%; margin-left: 5%;">  Food Group: <%= edits2[i].groupFood %>  </p>
+			<br>
+			<button class="button-3" onclick="myFunction('<%= edits[i].ID %>')">Delete</button>
+			<br>
+		</div>
+	<% } %>
+
+</div>
+<br>
+<div class="box-5"><br></div>
+
+<div class="container-3">
+	<br>
+	<div class="top-5">
+		<a class="a-1" href="/products/typeProduct" >Create Product</a>
+		<br>
+	</div>
+	<div class="middle-1">
+		<a class="a-1" href="/identifier/identifierlogin">Edit Shipment</a>
+		<br>
+	</div>
+	<div class="foot-5">
+		<a class="a-1" href="/products/globalProductEdit">Edit Product</a>
+		<br>
+	</div>
+	<br>
+</div>
+
+
+<div class="footer">
+  <h2 style="color: black">&#169 2020 - 2021 <a id="Home" href="/" class="footerlink" style="color: black">TrFood. Tracking the food.</a></h2>
+</div>
+<% include partials/footer %>
+<script src="/js/deleteProduct.js"></script>
+</body>
+<% include partials/script %>
+</html>

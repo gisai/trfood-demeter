@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrFood</title>
+   </head>
+<body class="registerProduct-1">
+    <% include partials/menu %>
+
+    <% include partials/messages %>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="box-6"><br></div>
+<div class="container-5">
+
+  <div class="container-6">
+    <div class="top-7">
+      <div class="shape-1"></div>
+    </div>
+    <div class="middle-2">
+        <p style="font-family: serif; font-size: 50px; color: black;">Group 4</p>
+    </div>
+    <div class="foot-7">
+      <div class="shape-2"></div>
+    </div>
+  </div>
+  <br>
+  <form action="/products/group4" method='POST' class="form-1">
+    <label for="name"><b class="text-2">What name is going to have the product?</b></label>
+    <input type="text" placeholder="Enter name" name="name" required/>
+    <br><br>
+      <label for="expiryDate"><b class="text-2">Expiry date</b></label><br>
+      <input type="date" placeholder="Enter expiry date" name="expiryDate" required/>
+
+      <br><br>
+      <label for="nutritionalInformation"><b class="text-2">Nutritional information</b></label><br>
+      <textarea type="text" placeholder="Enter the nutritional information" name="nutritionalInformation" style="height: 100px; width: 100%;" required></textarea>
+      <br><br>
+      <label for="status" class="text-2">Choose the current status:</label>
+      <select name="status" id="status" required>
+        <option value="Farm">Farm</option>
+        <option value="Processing">Processing</option>
+        <option value="Distribution">Distribution</option>
+        <option value="Retailer">Retailer</option>
+      </select>
+      <br><br>
+      <button type="submit" class="button-1">Add</button>
+  
+      <br>
+    </form>
+    <div class="container-6">
+      <div class="top-7">
+        <div class="shape-1"></div>
+      </div>
+      <div style="flex: 80%"></div>
+      <div class="foot-7">
+        <div class="shape-2"></div>
+      </div>
+    </div>
+    <br>
+</div>
+
+
+<div class="footer">
+  <h2 style="color: white">&#169 2020 - 2021 <a id="Home" href="/" class="footerlink">TrFood. Tracking the food.</a></h2>
+</div>
+<% include partials/footer %>
+
+<script src="/js/leaflet-map.js"></script>
+</body>
+<% include partials/script %>
+</html>
+
+

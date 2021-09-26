@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <% include partials/head %> 
+ <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body class="contactPage">
+<% include partials/menu %>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<div class="box-9"><br></div>
+<div class="container-10">
+  <div class="left-3">
+    <form action="/contact/contact" style="border-style: none;" method="POST">
+      <label for="name">Name</label>
+      <input type="text" placeholder="Enter name" name="name" required/>
+      <br>
+      <label for="surname">Surname</label>
+      <input type="text" placeholder="Enter surname" name="surname" required/>
+      <br>
+      <label for="email">Email</label>
+      <input type="text" placeholder="Enter email" name="email" required/>
+      <br>
+      <label for="text">Text</label>
+      <textarea style="width:100%; height: 200px;" type="text" placeholder="Enter Text" name="text" required></textarea>
+
+    </form>
+  </div>
+  <div class="right-3">
+      <p style="margin-left: 20%; font-size: 18px; font-weight: bold;">Madrid-Spain</p>
+      <p style="margin-left: 20%; font-size: 18px; font-weight: bold;">Address: </p>
+      <p style="margin-left: 20%; font-size: 18px; font-weight: bold;">Email: </p>
+      <p style="margin-left: 20%; font-size: 18px; font-weight: bold;">Number: </p>
+  </div>
+
+
+</div>
+
+<div class="footer">
+  <h2 style="color: rgb(90, 90, 90)">&#169 2020 - 2021 <a id="Home" href="/" class="footerlink">TrFood. Tracking the food.</a></h2>
+</div>
+<% include partials/footer %>
+</body>
+<% include partials/script %>
+</html>

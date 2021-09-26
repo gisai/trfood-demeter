@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrFood</title>
+</head>
+<body class="registerProduct-1">
+<% include partials/menu %>
+
+<% include partials/messages %>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="box-6"><br></div>
+<div class="container-5">
+
+  <div class="container-6">
+    <div class="top-7">
+      <div class="shape-1"></div>
+    </div>
+    <div class="middle-2">
+        <p style="font-family: serif; font-size: 50px; color: black;">Group 2 Edit</p>
+    </div>
+    <div class="foot-7">
+      <div class="shape-2"></div>
+    </div>
+  </div>
+  <br>
+  <form action="/identifier/corporativegroup2" method='POST' class="form-1">
+    <input type = "hidden" name = "ID" value = "<%= ID %>" />
+    <input type = "hidden" name="bossID" value = "<%= bossID %>" />
+
+    <p style=" font-size:16px; font-weight: bold;">A pollution measured in CO2Equiv/Kg of <%= group2.pollutionGenerated %> has been automatically calculated using European statistics for this type of product. In case you have a more accurate or different value than the one shown, please enter it below.</p>
+    <br>
+    <label for="pollutionGenerated"><b class="text-2">Amount of pollution generated in the state in CO2equiv per Kg</b></label><br>
+    <br>
+    <input type="number" placeholder="Enter pollution generated" name="pollutionGenerated" id="pollutionGenerated">
+    <br><br>
+    <p style=" font-size:16px; font-weight: bold;">Current status: <%= group2.status[length].status %></p>
+    <label for="status" class="text-2">Choose the new status:</label>
+    <select name="status" id="status" required>
+      <option value="Farm">Farm</option>
+      <option value="Processing">Processing</option>
+      <option value="Distribution">Distribution</option>
+      <option value="Retailer">Retailer</option>
+    </select>
+      <br><br>
+      <p>-- -- --public QR-- -- -- -- --corporative QR-- -- --</p>
+          <p><img src="<%= qr %>"> <img src="<%= qrc %>"></p>
+      <br><br>
+      <label for="person"><b>Add name and surname</b></label>
+      <input type="text" placeholder="Add name and surname " name="person">
+      <br><br>
+
+      <button type="submit" class="button-1">Add</button>
+  
+      <br>
+    </form>
+    <div class="container-6">
+      <div class="top-7">
+        <div class="shape-1"></div>
+      </div>
+      <div style="flex: 80%"></div>
+      <div class="foot-7">
+        <div class="shape-2"></div>
+      </div>
+    </div>
+    <br>
+</div>
+
+
+<div class="footer">
+  <h2 style="color: white">&#169 2020 - 2021 <a id="Home" href="/" class="footerlink">TrFood. Tracking the food.</a></h2>
+</div>
+<% include partials/footer %>
+
+</body>
+<% include partials/script %>
+</html>
+

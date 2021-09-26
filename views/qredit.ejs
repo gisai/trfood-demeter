@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body class="page2" id="about">
+<% include partials/menu %>
+
+<div class="row2">
+  <div class="side2">
+	<p style="text-align:center">EDIT</p>
+	<h1 class="title2">Apply the changes that are necessary</h1>
+	<div class="aboutText2">
+        <form action="/qr/qredit" method='POST'>
+            
+	      <p>Where it comes from?: <%= product.bornLocation %></p>
+        <p>Current location: <%= product.status[length].currentLocation %></p>
+            <label for="currentLocation"><b>New location</b></label>
+            <input type="text" placeholder="Enter the new location" name="currentLocation">
+          <br>
+          
+	      <p>Ingredients: <%= product.ingredients %></p>
+          <label for="ingredients"><b>Add new ingredients</b></label>
+          <input type="text" placeholder="Enter ingredients" name="ingredients">
+          <br>
+    
+          <p>Expiry date: <%= product.expiryDate %></p>
+          <br>
+          <label for="expiryDate"><b>New expiry date</b></label>
+          <input type="date" placeholder="Enter expiry date" name="expiryDate">
+          <br><br><br><br>
+    
+          
+	        <p>Current nutritional infromation: <%= product.nutritionalInformation %></p>
+          
+          <label for="nutritionalInformation"><b>Add new nutritional information</b></label>
+          <input type="text" placeholder="Enter Información Nutricional" name="nutritionalInformation">
+          <br>
+
+        <p>Current status: <%= product.status[length].status %></p>
+           <label for="status">Choose the new status:</label>
+            <select name="status" id="status" required>
+               <option value="Harvest">Harvest</option>
+               <option value="Processing">Processing</option>
+               <option value="Transportation">Transportation</option>
+               <option value="Distribution">Distribution</option>
+            </select>
+
+	   <p>Current carbon footprint: <%= product.pollutionGenerated %></p>
+     
+          <label for="pollutionGenerated"><b>New amount of pollution generated</b></label>
+          <br>
+          <input type="number" placeholder="Enter pollution generated" name="pollutionGenerated">
+          <br>
+
+          <label for="permissions"><b>Add permissions</b></label>
+          <input type="text" placeholder="Add permissions" name="permissions">
+            <br>
+          <label for="responsible"><b> Who are you?</b></label>
+          <input type="text" placeholder="Responsible state" name="responsible">
+          <br><br>
+    
+          <div class="clearfix6">
+            <button type="submit" class="signupbtn6">Add</button>
+          </div>
+        </form>
+	  
+	 </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2 style="color: white">&#169 2020 - 2021 <a id="Home" href="/" class="footerlink">TrFood. Tracking the food.</a></h2>
+</div>
+<% include partials/footer %>
+</body>
+<% include partials/script %>
+</html>

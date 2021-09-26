@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/head %> 
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body class="page8">
+    <% include partials/menu %>
+
+<div class="side8">
+<form action="/action_page.php" method="post" style="border-style: none;">
+  <div class="imgcontainer8">
+    <img src="../images/avatar.jpg" alt="Avatar" class="avatar8">
+  </div>
+
+  <div class="container8">
+    <label for="uname"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="uname" required>
+        
+    <button class="button-4" type="submit">Change Password</button>
+  </div>
+
+</form>
+</div>
+
+<div class="footer">
+  <h2 style="color: black">&#169 2020 - 2021 <a id="Home" href="/" class="footerlink" style="color: black">TrFood. Tracking the food.</a></h2>
+</div>
+<% include partials/footer %>
+</body>
+<% include partials/script %>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrFood</title>
+</head>
+<body class="globalProductEdit">
+<% include partials/menu %>
+
+<% include partials/messages %>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="box-6"><br></div>
+<div class="container-5">
+
+  <div class="container-6">
+    <div class="top-7">
+      <div class="shape-1"></div>
+    </div>
+    <div class="middle-2">
+        <p style="font-family: serif; font-size: 50px; color: black;">Product Edit</p>
+    </div>
+    <div class="foot-7">
+      <div class="shape-2"></div>
+    </div> 
+  </div>
+  <br>
+  <% for ( var i=0; i < products.length; i++) { %>
+    <div class="box-6"><br></div>
+    <br>
+  <form action="/products/globalProductEdit" method='POST' class="form-2">
+      
+    <p style=" font-size:16px; font-weight: bold;">ID <%= products[i].ID %></p>
+    <input type = "hidden" name = "ID" value = "<%= products[i].ID %>" />
+    <p style=" font-size:16px; font-weight: bold;">Name: <%= products[i].name %></p>
+    <label for="name"><b class="text-2">Name</b></label><br>
+    <input type="text" placeholder="Enter name" name="name">
+    <br><br>
+    <p style=" font-size:16px; font-weight: bold;">Availability: <%= products[i].availability %></p>
+    <label for="availability"><b class="text-2">New availability</b></label>
+    <input type="checkbox" name="availability" value="true"  id="availability" checked>
+    <br><br>
+    <p style=" font-size:16px; font-weight: bold;">Nutritional Information: <%= products[i].nutritionalInformation %></p>
+    <label for="nutritionalInformation"><b class="text-2">Nutritional information</b></label><br>
+    <textarea type="text" id="nutritionalInformation" placeholder="Enter the nutritional information" name="nutritionalInformation" style="height: 100px; width: 100%;" ></textarea>
+    <br><br>
+    <label for="permissions"><b class="text-2">Add permissions</b></label>
+    <input type="text" name="permissions"  id="permissions">
+    <br><br>
+
+    <button type="submit" class="button-1">Add</button>
+  </form>
+  <br>
+  <button class="button-5" onclick="myFunction('<%= products[i].ID %>')">Delete</button>
+  <br>
+  <br>
+  <% } %>
+    <div class="container-6">
+      <div class="top-7">
+        <div class="shape-1"></div>
+      </div>
+      <div style="flex: 80%"></div>
+      <div class="foot-7">
+        <div class="shape-2"></div>
+      </div>
+    </div>
+    <br>
+</div>
+
+
+<div class="footer">
+  <h2 style="color: white">&#169 2020 - 2021 <a id="Home" href="/" class="footerlink">TrFood. Tracking the food.</a></h2>
+</div>
+<% include partials/footer %>
+<script src="/js/deleteProductGlobal.js"></script>
+</body>
+<% include partials/script %>
+</html>

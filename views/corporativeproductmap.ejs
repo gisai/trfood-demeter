@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrFood</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <style>
+      #map { height: 700px; }
+  </style>
+
+   </head>
+<body class="registerProduct-1">
+    <% include partials/menu %>
+
+    <% include partials/messages %>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="box-6"><br></div>
+    <div class="container-5">
+    
+      <div class="container-6">
+        <div class="top-7">
+          <div class="shape-1"></div>
+        </div>
+        <div class="middle-2">
+            <p style="font-family: serif; font-size: 50px; color: black;">Group 8</p>
+        </div>
+        <div class="foot-7">
+          <div class="shape-2"></div>
+        </div>
+      </div>
+      <br>
+      <div class="box-6"><br></div>
+          <div id="map"></div>
+          <div class="box-6"><br></div>
+          <br><br>
+          <form action="/identifier/corporativeproductadd" method='POST' style="border-style: none;">
+            <input type = "hidden" name = "ID" value = "<%= ID %>" />
+              <h1 style="  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 20px; color: rgb(0, 0, 0); margin-left: 45%; font-size: 22px;">Search Product</h1>
+              <label class="text-3" for="busqueda">Product name:</label>
+              <input style="margin-left: 5%; width: 60%;" type="text" placeholder="Enter product name" name="busqueda" />
+              <br><br>
+        
+                <button type="submit" class="button-1">Add</button>
+          </form>
+    
+          <div class="container-6">
+          <div class="top-7">
+            <div class="shape-1"></div>
+          </div>
+          <div style="flex: 80%"></div>
+          <div class="foot-7">
+            <div class="shape-2"></div>
+          </div>
+        </div>
+        <br>
+    </div>
+
+
+<div class="footer">
+  <h2 style="color: white">&#169 2020 - 2021 <a id="Home" href="/" class="footerlink">TrFood. Tracking the food.</a></h2>
+</div>
+<% include partials/footer %>
+
+<script type="text/javascript">
+    var ID = '<%= ID %>';
+    var url = '/identifier/corporativeproductmap';
+    var latlngd = JSON.parse('<%= latlng %>');
+ </script>
+<script src="/js/leaflet-map-edit.js"></script>
+</body>
+<% include partials/script %>
+</html>

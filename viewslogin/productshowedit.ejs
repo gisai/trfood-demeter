@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrFood</title>
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+</head>
+<body class="registerProduct-1">
+<% include partials/menu %>
+
+<% include partials/messages %>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="box-6"><br></div>
+<div class="container-5">
+
+  <div class="container-6">
+    <div class="top-7">
+      <div class="shape-1"></div>
+    </div>
+    <div class="middle-2">
+        <p style="font-family: serif; font-size: 50px; color: black;">Group 8</p>
+    </div>
+    <div class="foot-7">
+      <div class="shape-2"></div>
+    </div>
+  </div>
+  <br>
+ 
+  <% for ( var i = 0; i < product.length; i++) { %>
+    <br>
+    <div class="container-8"> 
+
+    <p style="font-size: 20px; font-weight: bold; margin-left: 5%; margin-right: 5%;">ID: <%= product[i].ID %></p>
+    <br>
+    <p style="font-size: 20px; font-weight: bold; margin-left: 5%; margin-right: 5%;">Name: <%= product[i].name %></p>
+    <br>
+    <p style="font-size: 20px; font-weight: bold; margin-left: 5%; margin-right: 5%;">Company: <%= product[i].company %></p>
+    <br>
+    <label for="percentage">Percentage per Kg</label>
+    <input type="number" id="percentage" name="percentage" />  
+    <br>
+    <button class="button-1" onclick="myFunction('<%=product[i].ID%>', document.getElementById('percentage').value)">Click me</button>
+
+    </div>
+    <br>
+   <% } %>
+    <br>
+
+   <button onclick="window.location.href='/index/indexlogin'" class="button-1">Complete</button>
+    
+   <br><br>
+
+   <div class="container-6">
+      <div class="top-7">
+        <div class="shape-1"></div>
+      </div>
+      <div style="flex: 80%"></div>
+      <div class="foot-7">
+        <div class="shape-2"></div>
+      </div>
+    </div>
+    <br>
+</div>
+
+
+<div class="footer">
+  <h2 style="color: white">&#169 2020 - 2021 <a id="Home" href="/" class="footerlink">TrFood. Tracking the food.</a></h2>
+</div>
+<% include partials/footer %>
+<script type="text/javascript">
+  var url = '/products/productshowedit';
+  var ID = '<%= ID %>';
+</script>
+<script src="/js/addProduct.js"></script>
+</body>
+<% include partials/script %>
+</html>
