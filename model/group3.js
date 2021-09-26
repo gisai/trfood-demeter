@@ -58,7 +58,11 @@ const group3Schema = new mongoose.Schema({
     expiryDate: {
         type: String,
         required: true
-    },
+    },  
+    manufacturingDate: {
+        type: String,
+        required: true
+    }, 
     typefood: {
         type: String,
         enum: ['Nuts','Potatoes', 'Pulses'],

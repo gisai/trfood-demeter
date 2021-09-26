@@ -59,6 +59,10 @@ const group2Schema = new mongoose.Schema({
         type: String,
         required: true
     },
+    manufacturingDate: {
+        type: String,
+        required: true
+    }, 
     typefood: {
         type: String,
         enum: ['Beef Herd','Dairy Herd','Sheep','Goat','Lamb', 'Pig', 'Chicken', 'Fish farmed', 'Fish wild', 'Eggs','Other Meat'],

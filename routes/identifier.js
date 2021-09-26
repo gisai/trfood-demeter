@@ -3,6 +3,7 @@ var express = require('express');
 var app = require('../app');
 var Product = app.Product;
 //Food groups
+
 var group1 = app.Group1;
 var group2 = app.Group2;
 var group3 = app.Group3;
@@ -36,6 +37,327 @@ function permission(req, Product){
   }
   return false;
 }
+
+
+router.get('/identifierJSON', function(req,res,next){
+  var ID = req.query.id;
+
+
+  console.log('ID: ' + ID);
+
+  if(!ID){
+    res.json({msg: 'Please enter the Identifier'});
+  }
+
+  
+    //Product
+    Product.findOne({ID: ID }).exec((err ,product) => {
+      if(product){
+      console.log(product);
+      var length = product.status.length - 1;
+      if(length > 1){
+        length = length -1;
+      }
+      food.findOne({ID: product.bossID}).exec((err, product2) => {
+        res.json({
+          product2: product2,
+          product: product,
+          latlngi: JSON.stringify(product.status[0].currentLocation),
+          latlngf: JSON.stringify(product.status[length].currentLocation),
+          length: Object.keys(product.status).length - 1
+        });
+      });
+
+      }
+      if(!product){
+        Product.findOne({corporativeID: ID }).exec((err ,productc) => {
+          if(productc){
+            QRCode.toDataURL(productc.ID, function (err, url) {
+            QRCode.toDataURL(productc.corporativeID, function (err, urlc) {
+            res.json({
+              ID: productc.ID,
+              bossID: productc.bossID,
+              product: productc,
+              length: Object.keys(productc.status).length - 1,
+              qr: url,
+              qrc: urlc
+            });
+            });
+            });
+         }
+         if(!productc){
+           //Group1c - Pagina publica del grupo 1.
+          group1.findOne({ID: ID }).exec((err ,Group1) => {
+            if(Group1){
+              var length = Group1.status.length - 1;
+              if(length > 1){
+                length = length -1;
+              }
+              food.findOne({ID: Group1.bossID}).exec((err, product2) => {
+              res.json({
+                group12: product2,
+                group1: Group1,
+                latlngi: JSON.stringify(Group1.status[0].currentLocation),
+                latlngf: JSON.stringify(Group1.status[length].currentLocation),
+                length: Object.keys(Group1.status).length - 1
+              });
+              });
+           }
+           if(!Group1){
+            group1.findOne({corporativeID: ID }).exec((err ,group1c) => {
+              if(group1c){
+                QRCode.toDataURL(group1c.ID, function (err, url) {
+                  QRCode.toDataURL(group1c.corporativeID, function (err, urlc) {
+                  res.json({
+                    ID: group1c.ID,
+                    bossID: group1c.bossID,
+                    group1: group1c,
+                    length: Object.keys(group1c.status).length - 1,
+                    qr: url,
+                    qrc: urlc
+                  });
+                  });
+                  });
+             }
+             if(!group1c){
+               //Group2
+              group2.findOne({ID: ID }).exec((err ,Group2) => {
+                if(Group2){    
+                var length = Group2.status.length - 1;
+                if(length > 1){
+                  length = length -1;
+                }
+                food.findOne({ID: Group2.bossID}).exec((err, product2) => {
+                  res.JSON({
+                    group22: product2,
+                    group2: Group2,
+                    latlngi: JSON.stringify(Group2.status[0].currentLocation),
+                    latlngf: JSON.stringify(Group2.status[length].currentLocation),
+                    length: Object.keys(Group2.status).length - 1
+                  });
+                });
+               }
+               if(!Group2){
+                group2.findOne({corporativeID: ID }).exec((err ,group2c) => {
+                  if(group2c){
+                    QRCode.toDataURL(group2c.ID, function (err, url) {
+                      QRCode.toDataURL(group2c.corporativeID, function (err, urlc) {
+                      res.JSON({
+                        ID: group2c.ID,
+                        bossID: group2c.bossID,
+                        group2: group2c,
+                        length: Object.keys(group2c.status).length - 1,
+                        qr: url,
+                        qrc: urlc
+                      });
+                      });
+                      });
+                 }
+                 if(!group2c){
+                   //Group3
+                  group3.findOne({ID: ID }).exec((err ,Group3) => {
+                    if(Group3){
+                      var length = Group3.status.length - 1;
+                      if(length > 1){
+                        length = length -1;
+                      }
+                      food.findOne({ID: Group3.bossID}).exec((err, product2) => {
+                        res.JSON({
+                        group32: product2,
+                        group3: Group3,
+                        latlngi: JSON.stringify(Group3.status[0].currentLocation),
+                        latlngf: JSON.stringify(Group3.status[length].currentLocation),
+                        length: Object.keys(Group3.status).length - 1
+                      });
+                    });
+                   }
+                   if(!Group3){
+                    group3.findOne({corporativeID: ID }).exec((err ,group3c) => {
+                      if(group3c){
+                        QRCode.toDataURL(group3c.ID, function (err, url) {
+                          QRCode.toDataURL(group3c.corporativeID, function (err, urlc) {
+                          res.JSON({
+                            ID: group3c.ID,
+                            bossID: group3c.bossID,
+                            group3: group3c,
+                            length: Object.keys(group3c.status).length - 1,
+                            qr: url,
+                            qrc: urlc
+                          });
+                          });
+                          });
+                     }
+                     if(!group3c){
+                       //Group4
+                      group4.findOne({ID: ID }).exec((err ,Group4) => {
+                        if(Group4){
+                          var length = Group4.status.length - 1;
+                          if(length > 1){
+                            length = length -1;
+                          }
+                          food.findOne({ID: Group4.bossID}).exec((err, product2) => {
+                            res.JSON({
+                            group42: product2,
+                            group4: Group4,
+                            latlngi: JSON.stringify(Group4.status[0].currentLocation),
+                            latlngf: JSON.stringify(Group4.status[length].currentLocation),
+                            length: Object.keys(Group4.status).length - 1
+                          });
+                        });
+                       }
+                       if(!Group4){
+                        group4.findOne({corporativeID: ID }).exec((err ,group4c) => {
+                          if(group4c){
+                            QRCode.toDataURL(group4c.ID, function (err, url) {
+                              QRCode.toDataURL(group4c.corporativeID, function (err, urlc) {
+                              res.JSON({
+                                ID: group4c.ID,
+                                bossID: group4c.bossID,
+                                group4: group4c,
+                                length: Object.keys(group4c.status).length - 1,
+                                qr: url,
+                                qrc: urlc
+                              });
+                              });
+                              });
+                         }
+                         if(!group4c){
+                           //Group5
+                          group5.findOne({ID: ID }).exec((err ,Group5) => {
+                            if(Group5){
+                              var length = Group5.status.length - 1;
+                              if(length > 1){
+                                length = length -1;
+                              }
+                              food.findOne({ID: Group5.bossID}).exec((err, product2) => {
+                                res.JSON({
+                                group52: product2,
+                                group5: Group5,
+                                latlngi: JSON.stringify(Group5.status[0].currentLocation),
+                                latlngf: JSON.stringify(Group5.status[length].currentLocation),
+                                length: Object.keys(Group5.status).length - 1
+                              });
+                            });
+                           }
+                           if(!Group5){
+                            group5.findOne({corporativeID: ID }).exec((err ,group5c) => {
+                              if(group5c){
+                                QRCode.toDataURL(group5c.ID, function (err, url) {
+                                  QRCode.toDataURL(group5c.corporativeID, function (err, urlc) {
+                                  res.JSON({
+                                    ID: group5c.ID,
+                                    bossID: group5c.bossID,
+                                    group5: group5c,
+                                    length: Object.keys(group5c.status).length - 1,
+                                    qr: url,
+                                    qrc: urlc
+                                  });
+                                  });
+                                  });
+                             }
+                             if(!group5c){
+                               //Group6
+                              group6.findOne({ID: ID }).exec((err ,Group6) => {
+                                if(Group6){
+                                  var length = Group6.status.length - 1;
+                                  if(length > 1){
+                                    length = length -1;
+                                  }
+                                  food.findOne({ID: Group6.bossID}).exec((err, product2) => {
+                                    res.JSON({
+                                    group62: product2,
+                                    group6: Group6,
+                                    latlngi: JSON.stringify(Group6.status[0].currentLocation),
+                                    latlngf: JSON.stringify(Group6.status[length].currentLocation),
+                                    length: Object.keys(Group6.status).length - 1
+                                  });
+                                });
+                               }
+                               if(!Group6){
+                                group6.findOne({corporativeID: ID }).exec((err ,group6c) => {
+                                  if(group6c){
+                                    QRCode.toDataURL(group6c.ID, function (err, url) {
+                                      QRCode.toDataURL(group6c.corporativeID, function (err, urlc) {
+                                      res.JSON({
+                                        ID: group6c.ID,
+                                        bossID: group6c.bossID,
+                                        group6: group6c,
+                                        length: Object.keys(group6c.status).length - 1,
+                                        qr: url,
+                                        qrc: urlc
+                                      });
+                                      });
+                                      });
+                                 }
+                                 if(!group6c){
+                                   //Group7
+                                  group7.findOne({ID: ID }).exec((err ,Group7) => {
+                                    if(Group7){
+                                      var length = Group7.status.length - 1;
+                                      if(length > 1){
+                                        length = length -1;
+                                      }
+                                      food.findOne({ID: Group7.bossID}).exec((err, product2) => {
+                                        res.JSON({
+                                        group72: product2,
+                                        group7: Group7,
+                                        latlngi: JSON.stringify(Group7.status[0].currentLocation),
+                                        latlngf: JSON.stringify(Group7.status[length].currentLocation),
+                                        length: Object.keys(Group7.status).length - 1
+                                      });
+                                    });
+                                   }
+                                   if(!Group7){
+                                    group7.findOne({corporativeID: ID }).exec((err ,group7c) => {
+                                      if(group7c){
+                                        QRCode.toDataURL(group7c.ID, function (err, url) {
+                                          QRCode.toDataURL(group7c.corporativeID, function (err, urlc) {
+                                          res.JSON({
+                                            ID: group7c.ID,
+                                            bossID: group7c.bossID,
+                                            group7: group7c,
+                                            length: Object.keys(group7c.status).length - 1,
+                                            qr: url,
+                                            qrc: urlc
+                                          });
+                                          });
+                                          });
+                                     }
+                                    });
+                                   }
+                                  });
+                                 }
+                                });
+                               }
+                              });
+                             }
+                            });
+                           }
+                          });
+                         }
+                        });
+                       }
+                      });
+                     }
+                    });
+                   }
+                  });
+                 }
+                });
+               }
+              });
+             }
+            });
+           }
+          });
+         }
+        });
+      }
+    });
+  
+})
+
+
 router.post('/identifier', function(req,res,next){
   var {ID} = req.body;
   let errors = [];
@@ -88,7 +410,7 @@ router.post('/identifier', function(req,res,next){
             });
          }
          if(!productc){
-           //Group1
+           //Group1c - Pagina publica del grupo 1.
           group1.findOne({ID: ID }).exec((err ,Group1) => {
             if(Group1){
               var length = Group1.status.length - 1;
@@ -752,6 +1074,128 @@ router.post('/corporativegroup1', async(req, res) => {
   })
   }
 });
+
+//Edit page with the corporative ID (QR)
+router.post('/corporativeUpdate', async(req, res) => { //Me quedo por aquí. Muy tedioso de cambiar todo.
+  //Data
+  var { ID , status,pollutionGenerated, person} = req.body;
+  //errors
+  let errors = [];
+  //Status length value
+  await group1.findOne({ID: ID }).exec((err ,product) => {
+    if (product) {
+      length = product.status.length - 1;
+    }
+  });
+
+  var myquery = {ID: ID};
+  //If there are errors
+  if (errors.length > 0) {
+    res.render('corporativegroup1', {
+      product: Product,
+      errors : errors,
+      ID: ID,
+      pollutionGenerated: pollutionGenerated,
+      status: [
+        {ID: ID, status: status, responsible: person, pollutionGenerated: pollutionGenerated}
+      ]})
+  //If not
+  } else {
+    //It can not reach this part
+    if(status == null || status == ""){
+      if(pollutionGenerated != null && pollutionGenerated != ""){
+        group1.findOneAndUpdate(myquery, {$set: {pollutionGenerated: pollutionGenerated}}, {returnOriginal: false}).exec((err ,doc) => {
+          if (err) {
+            console.log("Something wrong when updating data!");
+        }
+        console.log(doc);
+        });
+      }
+    //Edit in the state selected
+    }else if(status != null && status != ""){
+      
+      group1.findOne({ID: ID, "status.status": status}).exec((err, product) => {
+        //If the status exist
+        if(product){
+          //Change total pollution from global variables and from the certain status
+          if(pollutionGenerated != null && pollutionGenerated != ""){
+            group1.findOneAndUpdate(myquery, {$set: {pollutionGenerated: pollutionGenerated}}, {returnOriginal: false}).exec((err ,doc) => {
+              if (err) {
+                console.log("Something wrong when updating data!");
+            }
+            console.log(doc);
+            });
+      
+            group1.findOneAndUpdate({ID: ID, "status.status": status}, {$set: {"status.$.pollutionGenerated": pollutionGenerated}}, {returnOriginal: false}).exec((err ,doc) => {
+              if (err) {
+                console.log("Something wrong when updating data!" + err);
+            }
+            console.log(doc);
+            });
+           }
+           var pollutionTransport = product.status[length].pollutionGeneratedTransport;
+           var distanceTransport = product.status[length].distance;
+
+           //We have to covert the distance and the pollution transport to 0 in the state, and in the global variable too
+           group1.findOne(myquery).exec((err, product) => {
+
+             var pollution = product.pollutionGeneratedTransport - pollutionTransport;
+             var distance = product.distance - distanceTransport;
+
+             group1.findOneAndUpdate(myquery, {$set: {pollutionGeneratedTransport: pollution}}, {returnOriginal: false}).exec((err ,doc) => {
+               if (err) {
+                 console.log("Something wrong when updating data!");
+             }
+             });
+
+             group1.findOneAndUpdate(myquery, {$set: {distance: distance}}, {returnOriginal: false}).exec((err ,doc) => {
+               if (err) {
+                 console.log("Something wrong when updating data!");
+             }
+             });
+           });
+
+
+
+        }else{
+          //Id status doesnt exist it creates a new status
+          group1.findOneAndUpdate(myquery, {$push: {status: {ID: ID, status: status, responsible: person, pollutionGenerated: pollutionGenerated}}}, {returnOriginal: false}).exec((err ,doc) => {
+            if (err) {
+              console.log("Something wrong when updating data!");
+          }
+          console.log(doc);
+          });
+
+           //Search and update pollution
+        if(pollutionGenerated != null && pollutionGenerated != ""){
+          group1.findOne(myquery).exec((err, product) => {
+               group1.findOneAndUpdate(myquery, {$set: {pollutionGenerated: pollutionGenerated}}, {returnOriginal: false}).exec((err ,doc) => {
+                if (err) {
+                  console.log("Something wrong when updating data!");
+              }
+              console.log(doc);
+               });
+          });
+        }
+        }
+      })
+        
+  }
+  //It doesn't need a promise. The sleep it's ok
+  await sleep(150);
+
+  req.flash('success_msg','UPDATED!');
+
+  //To render the map page, it's important to search for the location of the procoduct
+  await group1.findOne({ID: ID}).exec((err,product) =>  {
+    res.render('corporativegroup1map',{
+      latlng: JSON.stringify(product.location),
+      ID: ID
+    });
+  })
+  }
+});
+
 
 //Map page
 router.post('/corporativegroup1map', (req, res) => {

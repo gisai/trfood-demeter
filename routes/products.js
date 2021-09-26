@@ -37,7 +37,7 @@ router.get('/typeProduct', ensureAuthenticated,(req,res)=> res.render('typeProdu
 router.get('/group1', ensureAuthenticated,(req,res)=> res.render('group1'));
 
 router.post('/group1', ensureAuthenticated, async (req, res) => {
-  var {ID, corporativeID, shipmentID, name, file ,expiryDate, nutritionalInformation, company, typefood, status} = req.body;
+  var {ID, corporativeID, shipmentID, name, file ,expiryDate, manufacturingDate, nutritionalInformation, company, typefood, status} = req.body;
 
   var distance = 0;
   var contamination = 0;
@@ -115,6 +115,7 @@ router.post('/group1', ensureAuthenticated, async (req, res) => {
           bossID: product.ID,
           distance: distance,
           expiryDate: expiryDate,
+          manufacturingDate: manufacturingDate,
           typefood: typefood,
           creator: req.user.email,
           status: [
@@ -125,7 +126,7 @@ router.post('/group1', ensureAuthenticated, async (req, res) => {
           console.log(product2);
           if (product2) {
             errors.push({ msg: 'Product already exists' });
-            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate, manufacturingDate, nutritionalInformation, pollutionGenerated, creator, company, status);
           } else {
             const newProduct = new Group1({
             ID: shipmentID,
@@ -133,6 +134,7 @@ router.post('/group1', ensureAuthenticated, async (req, res) => {
               bossID: product.ID,
               distance: distance,
               expiryDate: expiryDate,
+              manufacturingDate: manufacturingDate,
               typefood: typefood,
               pollutionGenerated: contamination,
               creator: req.user.email,
@@ -161,6 +163,7 @@ router.post('/group1', ensureAuthenticated, async (req, res) => {
             bossID: ID,
             distance: distance,
             expiryDate: expiryDate,
+            manufacturingDate, manufacturingDate,
             typefood: typefood,
             creator: req.user.email,
             status: [
@@ -171,7 +174,7 @@ router.post('/group1', ensureAuthenticated, async (req, res) => {
             console.log(product);
             if (product) {
               errors.push({ msg: 'Product already exists' });
-              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,manufacturingDate,nutritionalInformation, pollutionGenerated, creator, company, status);
             } else {
               const newProduct = new Group1({
               ID: shipmentID,
@@ -179,6 +182,7 @@ router.post('/group1', ensureAuthenticated, async (req, res) => {
                 bossID: ID,
                 distance: distance,
                 expiryDate: expiryDate,
+                manufacturingDate: manufacturingDate,
                 typefood: typefood,
                 pollutionGenerated: contamination,
                 creator: req.user.email,
@@ -270,7 +274,7 @@ router.get('/group2', ensureAuthenticated,(req,res)=> res.render('group2'));
 
 
 router.post('/group2', ensureAuthenticated, async (req, res) => {
-  var { ID, corporativeID, shipmentID, name, expiryDate, nutritionalInformation, company, typefood,status} = req.body;
+  var { ID, corporativeID, shipmentID, name, expiryDate, manufacturingDate, nutritionalInformation, company, typefood,status} = req.body;
   
   //Errors
   let errors = [];
@@ -365,6 +369,7 @@ router.post('/group2', ensureAuthenticated, async (req, res) => {
           bossID: product.ID,
           distance: distance,
           expiryDate: expiryDate,
+          manufacturingDate: manufacturingDate,
           typefood: typefood,
           creator: req.user.email,
           status: [
@@ -375,7 +380,7 @@ router.post('/group2', ensureAuthenticated, async (req, res) => {
           console.log(product2);
           if (product2) {
             errors.push({ msg: 'Product already exists' });
-            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,manufacturingDate, nutritionalInformation, pollutionGenerated, creator, company, status);
           } else {
             const newProduct = new Group2({
             ID: shipmentID,
@@ -383,6 +388,7 @@ router.post('/group2', ensureAuthenticated, async (req, res) => {
               bossID: product.ID,
               distance: distance,
               expiryDate: expiryDate,
+              manufacturingDate: manufacturingDate,
               typefood: typefood,
               pollutionGenerated: contamination,
               creator: req.user.email,
@@ -411,6 +417,7 @@ router.post('/group2', ensureAuthenticated, async (req, res) => {
             bossID: ID,
             distance: distance,
             expiryDate: expiryDate,
+            manufacturingDate: manufacturingDate,
             typefood: typefood,
             creator: req.user.email,
             status: [
@@ -421,7 +428,7 @@ router.post('/group2', ensureAuthenticated, async (req, res) => {
             console.log(product);
             if (product) {
               errors.push({ msg: 'Product already exists' });
-              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,manufacturingDate, nutritionalInformation, pollutionGenerated, creator, company, status);
             } else {
               const newProduct = new Group2({
               ID: shipmentID,
@@ -429,6 +436,7 @@ router.post('/group2', ensureAuthenticated, async (req, res) => {
                 bossID: ID,
                 distance: distance,
                 expiryDate: expiryDate,
+                manufacturingDate: manufacturingDate,
                 typefood: typefood,
                 pollutionGenerated: contamination,
                 creator: req.user.email,
@@ -517,7 +525,7 @@ router.get('/group3', ensureAuthenticated,(req,res)=> res.render('group3'));
 
 
 router.post('/group3', ensureAuthenticated, async (req, res) => {
-  var { ID, corporativeID, shipmentID, name, expiryDate, nutritionalInformation, company, typefood,status} = req.body;
+  var { ID, corporativeID, shipmentID, name, expiryDate, manufacturingDate, nutritionalInformation, company, typefood,status} = req.body;
 
   //Errors
   let errors = [];
@@ -597,6 +605,7 @@ if(name != '' && name != null){
           bossID: product.ID,
           distance: distance,
           expiryDate: expiryDate,
+          manufacturingDate: manufacturingDate,
           typefood: typefood,
           creator: req.user.email,
           status: [
@@ -607,7 +616,7 @@ if(name != '' && name != null){
           console.log(product2);
           if (product2) {
             errors.push({ msg: 'Product already exists' });
-            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,manufacturingDate, nutritionalInformation, pollutionGenerated, creator, company, status);
           } else {
             const newProduct = new Group3({
             ID: shipmentID,
@@ -615,6 +624,7 @@ if(name != '' && name != null){
               bossID: product.ID,
               distance: distance,
               expiryDate: expiryDate,
+              manufacturingDate:manufacturingDate,
               typefood: typefood,
               pollutionGenerated: contamination,
               creator: req.user.email,
@@ -643,6 +653,7 @@ if(name != '' && name != null){
             bossID: ID,
             distance: distance,
             expiryDate: expiryDate,
+            manufacturingDate: manufacturingDate,
             typefood: typefood,
             creator: req.user.email,
             status: [
@@ -653,7 +664,7 @@ if(name != '' && name != null){
             console.log(product);
             if (product) {
               errors.push({ msg: 'Product already exists' });
-              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,manufacturingDate, nutritionalInformation, pollutionGenerated, creator, company, status);
             } else {
               const newProduct = new Group3({
               ID: shipmentID,
@@ -661,6 +672,7 @@ if(name != '' && name != null){
                 bossID: ID,
                 distance: distance,
                 expiryDate: expiryDate,
+                manufacturingDate: manufacturingDate,
                 typefood: typefood,
                 pollutionGenerated: contamination,
                 creator: req.user.email,
@@ -750,7 +762,7 @@ router.get('/group4', ensureAuthenticated,(req,res)=> res.render('group4'));
 
 
 router.post('/group4', ensureAuthenticated, async (req, res) => {
-  var { ID, corporativeID, shipmentID, name, expiryDate, nutritionalInformation, company,status} = req.body;
+  var { ID, corporativeID, shipmentID, name, expiryDate, manufacturingDate, nutritionalInformation, company,status} = req.body;
 
   //Errors
   let errors = [];
@@ -821,6 +833,7 @@ router.post('/group4', ensureAuthenticated, async (req, res) => {
           bossID: product.ID,
           distance: distance,
           expiryDate: expiryDate,
+          manufacturingDate: manufacturingDate,          
           creator: req.user.email,
           status: [
             {ID: shipmentID, status: status, responsible: req.user.email, distance: distance, pollutionGenerated: contamination}
@@ -829,7 +842,7 @@ router.post('/group4', ensureAuthenticated, async (req, res) => {
         Group4.findOne({ ID: shipmentID }).exec((err,product2) => {
           if (product2) {
             errors.push({ msg: 'Product already exists' });
-            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,manufacturingDate,nutritionalInformation, pollutionGenerated, creator, company, status);
           } else {
             const newProduct = new Group4({
             ID: shipmentID,
@@ -837,6 +850,7 @@ router.post('/group4', ensureAuthenticated, async (req, res) => {
               bossID: product.ID,
               distance: distance,
               expiryDate: expiryDate,
+              manufacturingDate: manufacturingDate,
               pollutionGenerated: contamination,
               creator: req.user.email,
               status: [
@@ -864,6 +878,7 @@ router.post('/group4', ensureAuthenticated, async (req, res) => {
             bossID: ID,
             distance: distance,
             expiryDate: expiryDate,
+            manufacturingDate: manufacturingDate,
             creator: req.user.email,
             status: [
               {ID: shipmentID, status: status, responsible: req.user.email, distance: distance, pollutionGenerated: contamination}
@@ -873,7 +888,7 @@ router.post('/group4', ensureAuthenticated, async (req, res) => {
             console.log(product);
             if (product) {
               errors.push({ msg: 'Product already exists' });
-              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,manufacturingDate, nutritionalInformation, pollutionGenerated, creator, company, status);
             } else {
               const newProduct = new Group4({
               ID: shipmentID,
@@ -881,6 +896,7 @@ router.post('/group4', ensureAuthenticated, async (req, res) => {
                 bossID: ID,
                 distance: distance,
                 expiryDate: expiryDate,
+                manufacturingDate: manufacturingDate,
                 pollutionGenerated: contamination,
                 creator: req.user.email,
                 status: [
@@ -969,7 +985,7 @@ router.get('/group5', ensureAuthenticated,(req,res)=> res.render('group5'));
 
 
 router.post('/group5', ensureAuthenticated, async (req, res) => {
-  var { ID, corporativeID, shipmentID, name, expiryDate, nutritionalInformation, company, status} = req.body;
+  var { ID, corporativeID, shipmentID, name, expiryDate, manufacturingDate, nutritionalInformation, company, status} = req.body;
 
 
   //Errors
@@ -1040,6 +1056,7 @@ router.post('/group5', ensureAuthenticated, async (req, res) => {
           bossID: product.ID,
           distance: distance,
           expiryDate: expiryDate,
+          manufacturingDate: manufacturingDate,
           creator: req.user.email,
           status: [
             {ID: shipmentID, status: status, responsible: req.user.email, distance: distance, pollutionGenerated: contamination}
@@ -1048,7 +1065,7 @@ router.post('/group5', ensureAuthenticated, async (req, res) => {
         Group5.findOne({ ID: shipmentID }).exec((err,product2) => {
           if (product2) {
             errors.push({ msg: 'Product already exists' });
-            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,manufacturingDate, nutritionalInformation, pollutionGenerated, creator, company, status);
           } else {
             const newProduct = new Group5({
             ID: shipmentID,
@@ -1056,6 +1073,7 @@ router.post('/group5', ensureAuthenticated, async (req, res) => {
               bossID: product.ID,
               distance: distance,
               expiryDate: expiryDate,
+              manufacturingDate: manufacturingDate,
               pollutionGenerated: contamination,
               creator: req.user.email,
               status: [
@@ -1083,6 +1101,7 @@ router.post('/group5', ensureAuthenticated, async (req, res) => {
             bossID: ID,
             distance: distance,
             expiryDate: expiryDate,
+            manufacturingDate: manufacturingDate,
             creator: req.user.email,
             status: [
               {ID: shipmentID, status: status, responsible: req.user.email, distance: distance, pollutionGenerated: contamination}
@@ -1091,7 +1110,7 @@ router.post('/group5', ensureAuthenticated, async (req, res) => {
           Group5.findOne({ ID: shipmentID }).exec((err,product) => {
             if (product) {
               errors.push({ msg: 'Product already exists' });
-              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate, manufacturingDate, nutritionalInformation, pollutionGenerated, creator, company, status);
             } else {
               const newProduct = new Group5({
               ID: shipmentID,
@@ -1099,6 +1118,7 @@ router.post('/group5', ensureAuthenticated, async (req, res) => {
                 bossID: ID,
                 distance: distance,
                 expiryDate: expiryDate,
+                manufacturingDate: manufacturingDate,
                 pollutionGenerated: contamination,
                 creator: req.user.email,
                 status: [
@@ -1187,7 +1207,7 @@ router.get('/group6', ensureAuthenticated,(req,res)=> res.render('group6'));
 
 
 router.post('/group6', ensureAuthenticated, async (req, res) => {
-  var { ID, corporativeID, shipmentID, name, composition, expiryDate, nutritionalInformation, company, typefood,status} = req.body;
+  var { ID, corporativeID, shipmentID, name, composition, expiryDate, manufacturingDate, nutritionalInformation, company, typefood,status} = req.body;
   //Errors
   let errors = [];
   var distance = 0;
@@ -1266,6 +1286,7 @@ router.post('/group6', ensureAuthenticated, async (req, res) => {
           bossID: product.ID,
           distance: distance,
           expiryDate: expiryDate,
+          manufacturingDate: manufacturingDate,
           typefood: typefood,
           creator: req.user.email,
           status: [
@@ -1276,7 +1297,7 @@ router.post('/group6', ensureAuthenticated, async (req, res) => {
           console.log(product2);
           if (product2) {
             errors.push({ msg: 'Product already exists' });
-            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,manufacturingDate, nutritionalInformation, pollutionGenerated, creator, company, status);
           } else {
             const newProduct = new Group6({
             ID: shipmentID,
@@ -1284,6 +1305,7 @@ router.post('/group6', ensureAuthenticated, async (req, res) => {
               bossID: product.ID,
               distance: distance,
               expiryDate: expiryDate,
+              manufacturingDate: manufacturingDate,
               typefood: typefood,
               pollutionGenerated: contamination,
               creator: req.user.email,
@@ -1312,6 +1334,7 @@ router.post('/group6', ensureAuthenticated, async (req, res) => {
             bossID: ID,
             distance: distance,
             expiryDate: expiryDate,
+            manufacturingDate: manufacturingDate,
             typefood: typefood,
             creator: req.user.email,
             status: [
@@ -1322,7 +1345,7 @@ router.post('/group6', ensureAuthenticated, async (req, res) => {
             console.log(product);
             if (product) {
               errors.push({ msg: 'Product already exists' });
-              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate, manufacturingDate, nutritionalInformation, pollutionGenerated, creator, company, status);
             } else {
               const newProduct = new Group6({
               ID: shipmentID,
@@ -1330,6 +1353,7 @@ router.post('/group6', ensureAuthenticated, async (req, res) => {
                 bossID: ID,
                 distance: distance,
                 expiryDate: expiryDate,
+                manufacturingDate: manufacturingDate,
                 typefood: typefood,
                 pollutionGenerated: contamination,
                 creator: req.user.email,
@@ -1491,7 +1515,7 @@ router.get('/group7', ensureAuthenticated,(req,res)=> res.render('group7'));
 
 
 router.post('/group7', ensureAuthenticated, async (req, res) => {
-  var { ID, corporativeID, shipmentID, name, composition, expiryDate, nutritionalInformation, company, typefood,status} = req.body;
+  var { ID, corporativeID, shipmentID, name, composition, expiryDate, manufacturingDate, nutritionalInformation, company, typefood,status} = req.body;
 
   //Errors
   let errors = [];
@@ -1575,6 +1599,7 @@ router.post('/group7', ensureAuthenticated, async (req, res) => {
           bossID: product.ID,
           distance: distance,
           expiryDate: expiryDate,
+          manufacturingDate: manufacturingDate,
           typefood: typefood,
           creator: req.user.email,
           status: [
@@ -1585,7 +1610,7 @@ router.post('/group7', ensureAuthenticated, async (req, res) => {
           console.log(product2);
           if (product2) {
             errors.push({ msg: 'Product already exists' });
-            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate, manufacturingDate, nutritionalInformation, pollutionGenerated, creator, company, status);
           } else {
             const newProduct = new Group7({
             ID: shipmentID,
@@ -1593,6 +1618,7 @@ router.post('/group7', ensureAuthenticated, async (req, res) => {
               bossID: product.ID,
               distance: distance,
               expiryDate: expiryDate,
+              manufacturingDate: manufacturingDate,
               typefood: typefood,
               pollutionGenerated: contamination,
               creator: req.user.email,
@@ -1621,6 +1647,7 @@ router.post('/group7', ensureAuthenticated, async (req, res) => {
             bossID: ID,
             distance: distance,
             expiryDate: expiryDate,
+            manufacturingDate: manufacturingDate,
             typefood: typefood,
             creator: req.user.email,
             status: [
@@ -1631,7 +1658,7 @@ router.post('/group7', ensureAuthenticated, async (req, res) => {
             console.log(product);
             if (product) {
               errors.push({ msg: 'Product already exists' });
-              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,manufacturingDate, nutritionalInformation, pollutionGenerated, creator, company, status);
             } else {
               const newProduct = new Group7({
               ID: shipmentID,
@@ -1639,6 +1666,7 @@ router.post('/group7', ensureAuthenticated, async (req, res) => {
                 bossID: ID,
                 distance: distance,
                 expiryDate: expiryDate,
+                manufacturingDate: manufacturingDate,
                 typefood: typefood,
                 pollutionGenerated: contamination,
                 creator: req.user.email,
@@ -1727,7 +1755,7 @@ router.post('/group7map', ensureAuthenticated, async (req, res) => {
 router.get('/registerProduct',ensureAuthenticated,(req,res)=> res.render('registerProduct'));
 
 router.post('/registerProduct', ensureAuthenticated, async (req, res) => {
-  var {ID, corporativeID, shipmentID, name, expiryDate, nutritionalInformation, company, status} = req.body;
+  var {ID, corporativeID, shipmentID, name, expiryDate, manufacturingDate, nutritionalInformation, company, status} = req.body;
 
   //Errors
   let errors = [];
@@ -1799,6 +1827,7 @@ router.post('/registerProduct', ensureAuthenticated, async (req, res) => {
           bossID: product.ID,
           distance: distance,
           expiryDate: expiryDate,
+          manufacturingDate: manufacturingDate,
           creator: req.user.email,
           status: [
             {ID: shipmentID, status: status, responsible: req.user.email, distance: distance, pollutionGenerated: contamination}
@@ -1808,7 +1837,7 @@ router.post('/registerProduct', ensureAuthenticated, async (req, res) => {
           console.log(product2);
           if (product2) {
             errors.push({ msg: 'Product already exists' });
-            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+            render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate, manufacturingDate, nutritionalInformation, pollutionGenerated, creator, company, status);
           } else {
             const newProduct = new Product({
             ID: shipmentID,
@@ -1816,6 +1845,7 @@ router.post('/registerProduct', ensureAuthenticated, async (req, res) => {
               bossID: product.ID,
               distance: distance,
               expiryDate: expiryDate,
+              manufacturingDate: manufacturingDate,
               pollutionGenerated: contamination,
               creator: req.user.email,
               status: [
@@ -1843,6 +1873,7 @@ router.post('/registerProduct', ensureAuthenticated, async (req, res) => {
             bossID: ID,
             distance: distance,
             expiryDate: expiryDate,
+            manufacturingDate: manufacturingDate,
             creator: req.user.email,
             status: [
               {ID: shipmentID, status: status, responsible: req.user.email, distance: distance, pollutionGenerated: contamination}
@@ -1852,7 +1883,7 @@ router.post('/registerProduct', ensureAuthenticated, async (req, res) => {
             console.log(product);
             if (product) {
               errors.push({ msg: 'Product already exists' });
-              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,nutritionalInformation, pollutionGenerated, creator, company, status);
+              render(res,errors,ID, corporativeID, shipmentID,availability,composition,expiryDate,manufacturingDate,nutritionalInformation, pollutionGenerated, creator, company, status);
             } else {
               const newProduct = new Product({
               ID: shipmentID,
@@ -1860,6 +1891,7 @@ router.post('/registerProduct', ensureAuthenticated, async (req, res) => {
                 bossID: ID,
                 distance: distance,
                 expiryDate: expiryDate,
+                manufacturingDate: manufacturingDate,
                 pollutionGenerated: contamination,
                 creator: req.user.email,
                 status: [

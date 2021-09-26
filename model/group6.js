@@ -70,6 +70,10 @@ const group6Schema = new mongoose.Schema({
         type: String,
         required: true
     },
+    manufacturingDate: {
+        type: String,
+        required: true
+    }, 
     typefood: {
         type: String,
         enum: ['Rice','Wheat','Sugar','Other'],

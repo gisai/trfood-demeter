@@ -58,7 +58,11 @@ const group7Schema = new mongoose.Schema({
     expiryDate: {
         type: String,
         required: true
-    },
+    },    
+    manufacturingDate: {
+        type: String,
+        required: true
+    }, 
     typefood: {
         type: String,
         enum: ['Palm Oil','Olive Oil', 'Butter', 'Margarine', 'Other'],

@@ -59,7 +59,11 @@ const group4Schema = new mongoose.Schema({
     expiryDate: {
         type: String,
         required: true
-    },
+    },  
+    manufacturingDate: {
+        type: String,
+        required: true
+    }, 
     pollutionGenerated: {
         type: Number
     },
