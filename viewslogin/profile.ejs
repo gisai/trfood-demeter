@@ -36,10 +36,13 @@
 <br>
 <div class="container-2"> 
     <% for ( var i = 0; i < edits2.length; i++) { %>
+    <% if (edits2[i] ==  null) continue; %>
 		<br>
 		<div class="edits-data">
 			<br>
+			
 			<img style="height: 300px; width: 400px; border-radius: 10px;" src="data:image/png;base64, <%= edits2[i].img %>" />
+			
 			<br><br>
 			<p style="text-align: center; margin-right: 5%; margin-left: 5%;">  ID <%= edits[i].ID %>  </p>
 			<p style="text-align: center; margin-right: 5%; margin-left: 5%;">  Name: <%= edits2[i].name %>  </p>

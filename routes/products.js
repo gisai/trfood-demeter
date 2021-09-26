@@ -1916,6 +1916,8 @@ router.post('/registerProduct', ensureAuthenticated, async (req, res) => {
 });
 
 router.post('/productpicture', upload.single('image') ,ensureAuthenticated, async (req, res) => {
+if (!req.file) return;
+
   const buffer = await sharp(
     path.join(__dirname, `../public/uploads/${req.file.filename}`),
   ).png().toBuffer();
