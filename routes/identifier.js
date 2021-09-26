@@ -95,8 +95,8 @@ router.get('/identifierJSON', function(req,res,next){
               }
               food.findOne({ID: Group1.bossID}).exec((err, product2) => {
               res.json({
-                group12: product2,
-                group1: Group1,
+                product: product2,
+                shipment_status: Group1,
                 latlngi: JSON.stringify(Group1.status[0].currentLocation),
                 latlngf: JSON.stringify(Group1.status[length].currentLocation),
                 length: Object.keys(Group1.status).length - 1
@@ -108,14 +108,7 @@ router.get('/identifierJSON', function(req,res,next){
               if(group1c){
                 QRCode.toDataURL(group1c.ID, function (err, url) {
                   QRCode.toDataURL(group1c.corporativeID, function (err, urlc) {
-                  res.json({
-                    ID: group1c.ID,
-                    bossID: group1c.bossID,
-                    group1: group1c,
-                    length: Object.keys(group1c.status).length - 1,
-                    qr: url,
-                    qrc: urlc
-                  });
+                  res.json({error:"corporativeID cannot be used here"});
                   });
                   });
              }
@@ -128,9 +121,9 @@ router.get('/identifierJSON', function(req,res,next){
                   length = length -1;
                 }
                 food.findOne({ID: Group2.bossID}).exec((err, product2) => {
-                  res.JSON({
-                    group22: product2,
-                    group2: Group2,
+                  res.json({
+                    product: product2,
+                    shipment_status: Group2,
                     latlngi: JSON.stringify(Group2.status[0].currentLocation),
                     latlngf: JSON.stringify(Group2.status[length].currentLocation),
                     length: Object.keys(Group2.status).length - 1
@@ -142,14 +135,7 @@ router.get('/identifierJSON', function(req,res,next){
                   if(group2c){
                     QRCode.toDataURL(group2c.ID, function (err, url) {
                       QRCode.toDataURL(group2c.corporativeID, function (err, urlc) {
-                      res.JSON({
-                        ID: group2c.ID,
-                        bossID: group2c.bossID,
-                        group2: group2c,
-                        length: Object.keys(group2c.status).length - 1,
-                        qr: url,
-                        qrc: urlc
-                      });
+                     res.json({error:"corporativeID cannot be used here"});
                       });
                       });
                  }
@@ -162,9 +148,9 @@ router.get('/identifierJSON', function(req,res,next){
                         length = length -1;
                       }
                       food.findOne({ID: Group3.bossID}).exec((err, product2) => {
-                        res.JSON({
-                        group32: product2,
-                        group3: Group3,
+                        res.json({
+                        product: product2,
+                        shipment_status: Group3,
                         latlngi: JSON.stringify(Group3.status[0].currentLocation),
                         latlngf: JSON.stringify(Group3.status[length].currentLocation),
                         length: Object.keys(Group3.status).length - 1
@@ -176,14 +162,7 @@ router.get('/identifierJSON', function(req,res,next){
                       if(group3c){
                         QRCode.toDataURL(group3c.ID, function (err, url) {
                           QRCode.toDataURL(group3c.corporativeID, function (err, urlc) {
-                          res.JSON({
-                            ID: group3c.ID,
-                            bossID: group3c.bossID,
-                            group3: group3c,
-                            length: Object.keys(group3c.status).length - 1,
-                            qr: url,
-                            qrc: urlc
-                          });
+                         res.json({error:"corporativeID cannot be used here"});
                           });
                           });
                      }
@@ -196,9 +175,9 @@ router.get('/identifierJSON', function(req,res,next){
                             length = length -1;
                           }
                           food.findOne({ID: Group4.bossID}).exec((err, product2) => {
-                            res.JSON({
-                            group42: product2,
-                            group4: Group4,
+                            res.json({
+                            product: product2,
+                            shipment_status: Group4,
                             latlngi: JSON.stringify(Group4.status[0].currentLocation),
                             latlngf: JSON.stringify(Group4.status[length].currentLocation),
                             length: Object.keys(Group4.status).length - 1
@@ -210,14 +189,7 @@ router.get('/identifierJSON', function(req,res,next){
                           if(group4c){
                             QRCode.toDataURL(group4c.ID, function (err, url) {
                               QRCode.toDataURL(group4c.corporativeID, function (err, urlc) {
-                              res.JSON({
-                                ID: group4c.ID,
-                                bossID: group4c.bossID,
-                                group4: group4c,
-                                length: Object.keys(group4c.status).length - 1,
-                                qr: url,
-                                qrc: urlc
-                              });
+                                res.json({error:"corporativeID cannot be used here"});
                               });
                               });
                          }
@@ -230,9 +202,9 @@ router.get('/identifierJSON', function(req,res,next){
                                 length = length -1;
                               }
                               food.findOne({ID: Group5.bossID}).exec((err, product2) => {
-                                res.JSON({
-                                group52: product2,
-                                group5: Group5,
+                                res.json({
+                                product: product2,
+                                shipment_status: Group5,
                                 latlngi: JSON.stringify(Group5.status[0].currentLocation),
                                 latlngf: JSON.stringify(Group5.status[length].currentLocation),
                                 length: Object.keys(Group5.status).length - 1
@@ -244,14 +216,7 @@ router.get('/identifierJSON', function(req,res,next){
                               if(group5c){
                                 QRCode.toDataURL(group5c.ID, function (err, url) {
                                   QRCode.toDataURL(group5c.corporativeID, function (err, urlc) {
-                                  res.JSON({
-                                    ID: group5c.ID,
-                                    bossID: group5c.bossID,
-                                    group5: group5c,
-                                    length: Object.keys(group5c.status).length - 1,
-                                    qr: url,
-                                    qrc: urlc
-                                  });
+                                  res.json({error:"corporativeID cannot be used here"});
                                   });
                                   });
                              }
@@ -264,9 +229,9 @@ router.get('/identifierJSON', function(req,res,next){
                                     length = length -1;
                                   }
                                   food.findOne({ID: Group6.bossID}).exec((err, product2) => {
-                                    res.JSON({
-                                    group62: product2,
-                                    group6: Group6,
+                                    res.json({
+                                    product: product2,
+                                    shipment_status: Group6,
                                     latlngi: JSON.stringify(Group6.status[0].currentLocation),
                                     latlngf: JSON.stringify(Group6.status[length].currentLocation),
                                     length: Object.keys(Group6.status).length - 1
@@ -278,14 +243,7 @@ router.get('/identifierJSON', function(req,res,next){
                                   if(group6c){
                                     QRCode.toDataURL(group6c.ID, function (err, url) {
                                       QRCode.toDataURL(group6c.corporativeID, function (err, urlc) {
-                                      res.JSON({
-                                        ID: group6c.ID,
-                                        bossID: group6c.bossID,
-                                        group6: group6c,
-                                        length: Object.keys(group6c.status).length - 1,
-                                        qr: url,
-                                        qrc: urlc
-                                      });
+                                       res.json({error:"corporativeID cannot be used here"});
                                       });
                                       });
                                  }
@@ -298,9 +256,9 @@ router.get('/identifierJSON', function(req,res,next){
                                         length = length -1;
                                       }
                                       food.findOne({ID: Group7.bossID}).exec((err, product2) => {
-                                        res.JSON({
-                                        group72: product2,
-                                        group7: Group7,
+                                        res.json({
+                                        product: product2,
+                                        shipment_status: Group7,
                                         latlngi: JSON.stringify(Group7.status[0].currentLocation),
                                         latlngf: JSON.stringify(Group7.status[length].currentLocation),
                                         length: Object.keys(Group7.status).length - 1
@@ -312,14 +270,7 @@ router.get('/identifierJSON', function(req,res,next){
                                       if(group7c){
                                         QRCode.toDataURL(group7c.ID, function (err, url) {
                                           QRCode.toDataURL(group7c.corporativeID, function (err, urlc) {
-                                          res.JSON({
-                                            ID: group7c.ID,
-                                            bossID: group7c.bossID,
-                                            group7: group7c,
-                                            length: Object.keys(group7c.status).length - 1,
-                                            qr: url,
-                                            qrc: urlc
-                                          });
+                                          res.json({error:"corporativeID cannot be used here"});
                                           });
                                           });
                                      }
