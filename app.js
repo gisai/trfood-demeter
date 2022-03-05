@@ -18,12 +18,31 @@ var logger = require('morgan');
 
 var Emitter = require('events');
 
+var env = process.env.NODE_ENV || 'development';
+var config = require('./config')[env];
+
+
+const port = config.server.port;
+
+
+const usuario = encodeURIComponent(config.database.user);
+const password = encodeURIComponent(config.database.pass);
+const dbName = config.database.db;
+const dbhost = config.database.host
+const dbport = config.database.port
+
+console.log(`Using ${usuario}`);
+console.log(`Using ${password}`);
+
+const uri = `mongodb://${usuario}:${password}@${dbhost}:${dbport}/${dbName}`;
+
+
 //For the profile image
 //var multer = require('multer');
 //var fs = require('fs');
 
 //Database connection
-var conn = mongoose.createConnection('mongodb://localhost:27017/trfood', {
+var conn = mongoose.createConnection(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true

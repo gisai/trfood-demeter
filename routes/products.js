@@ -1379,6 +1379,12 @@ router.post('/group6', ensureAuthenticated, async (req, res) => {
 });
 
 router.post('/group6picture', upload.single('image') ,ensureAuthenticated, async (req, res) => {
+  
+  if (!req.file || !req.file.filename) {
+  console.log("Unexpected error from /group6picture");
+   res.status(500).send({ error: 'Something failed!' });
+  }
+  else {
   const buffer = await sharp(
     path.join(__dirname, `../public/uploads/${req.file.filename}`),
   ).png().toBuffer();
@@ -1388,6 +1394,7 @@ router.post('/group6picture', upload.single('image') ,ensureAuthenticated, async
     { ID: ID },
     { img: thumb },
   );
+  }
 
 })
 
